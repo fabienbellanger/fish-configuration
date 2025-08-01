@@ -1,0 +1,2 @@
+# fish-configuration
+Fish configuration
