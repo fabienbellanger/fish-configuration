@@ -27,6 +27,15 @@ function fish_prompt --description 'Write out the prompt'
         set prompt_status $status_color "[" $last_status "]" $normal
     end
 
-    echo -s (prompt_login) ' ' $cwd_color (prompt_pwd) $vcs_color (fish_vcs_prompt) ' ' $time_color [(date "+%H:%M:%S")] $normal ' ' $prompt_status
-    echo -n -s $status_color $suffix ' ' $normal
+    echo -s \
+        (prompt_login) ' ' \
+        $cwd_color (prompt_pwd) \
+        $vcs_color (fish_vcs_prompt) ' ' \
+        $time_color [(date "+%H:%M:%S")] \
+        $normal ' ' \
+        $prompt_status
+
+    echo -n -s \
+        $status_color $suffix ' ' \
+        $normal
 end
